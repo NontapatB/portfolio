@@ -196,25 +196,13 @@ export const caseStudies: CaseStudy[] = [
     diagram: "scai-security",
     decisions: [
       {
-        title: "Patrol rounds that schedule themselves, once",
+        title: "Roles, accounts and sites: who can do what, and where",
         problem:
-          "Recurring rounds were sometimes created twice or skipped. Day boundaries were compared in local time against UTC timestamps, and the midnight job lived in a service that Cloud Run scales to zero.",
+          "Each customer is a security company with many sites. Its managers run the whole company, site managers run only their own sites, guards share handhelds at each post, and our admins support every customer. The first version had a role nobody used, no clear rule for who could create whom, and every new customer needed us to set up their accounts by hand.",
         choice:
-          "Work out each round's day in its own time zone and convert to UTC, check planned times instead of finish times, and move the job to the always-on reminder worker.",
-        result: "One session per round per day, created on time even when no one is using the app.",
-      },
-      {
-        title: "Check permissions once, at the gateway",
-        problem: "Four roles and shared handhelds meant every service would need its own role logic.",
-        choice:
-          "The gateway verifies the token, checks the role, caches the answer in Redis, and passes the role on. Handheld logins get a narrower set of permissions.",
-        result: "Services stay small, and a handheld login cannot reach admin features.",
-      },
-      {
-        title: "Onboarding a new company in minutes",
-        problem: "Setting up a customer meant manual accounts, sites and checkpoints, one guard at a time.",
-        choice: "Self sign-up with auto login, checkpoint presets by business type, CSV import for guards, and invite links that expire after 7 days.",
-        result: "A company can sign up, add a site and invite its guards without help from us.",
+          "Cut the roles to three with one hierarchy: admins can create any role, managers create site managers inside their own company and must give each one a site, and site managers create no one. Every service limits data to the signed-in user's company and sites. Sign-up creates the company, its first site and the owner's access in one step, and owners invite people with links that expire. Site managers can switch their own site's app features on or off, while the site itself stays with the manager. Handhelds sign in to a single site, shared at the post or bound to one guard.",
+        result:
+          "A company signs up, adds its sites and invites its people without help from us, and each person sees only the company and sites their role allows. The role rules have unit tests, and QA covered 34 pages across all three roles.",
       },
     ],
     quality: [
@@ -227,7 +215,7 @@ export const caseStudies: CaseStudy[] = [
     headings: {
       whatItDoes: "Patrol, incidents, visitors and reports.",
       system: "Eleven services behind one gateway.",
-      decisions: "Three problems I had to solve.",
+      decisions: "The problem I had to solve.",
       quality: "Tested across roles, devices and production.",
     },
     next: "baojai",

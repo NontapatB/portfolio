@@ -1,4 +1,4 @@
-import { baojaiLinks, recognition, shots, type Shot } from "./site";
+import { recognition, shots, type Shot } from "./site";
 
 export type Decision = { title: string; problem: string; choice: string; result: string };
 
@@ -48,11 +48,10 @@ export const caseStudies: CaseStudy[] = [
     lede: "A wellness platform that reads your body while you practice. The phone app talks to smart rings and EEG headbands, measures vital signs with the camera, and runs live classes with coaches.",
     facts: [
       { label: "Role", value: "Lead developer: app, website, admin console and backend" },
-      { label: "Period", value: "Feb 2026 – now" },
+      { label: "Period", value: "Feb 2026 – Nov 2026" },
       { label: "Platforms", value: "iOS, Android, Web" },
       { label: "Stack", value: "Expo React Native, FastAPI, Supabase, Cloud Run, Next.js" },
     ],
-    links: baojaiLinks,
     galleries: [
       {
         kind: "phones",
@@ -90,7 +89,7 @@ export const caseStudies: CaseStudy[] = [
       { title: "Watched in production.", body: "Sentry for errors and PostHog for product analytics." },
     ],
     outcome: [
-      { title: "Shipped.", body: "Live on the App Store and Google Play, with the booking site at baojai.com." },
+      { title: "Shipped.", body: "Released on the App Store and Google Play in 2026, with a booking site at baojai.com. The service has since been shut down." },
       { title: "Platinum Award, highest distinction, and Gold Medal with Jury Congratulations", body: "at BME IIF 2026 in Fukuoka, Japan." },
       { title: "On the floor.", body: "Ran the Baojai booth at Thailand Wellness & Healthcare Expo 2026, BITEC Bangkok." },
     ],
@@ -106,7 +105,7 @@ export const caseStudies: CaseStudy[] = [
         sub: "Wellness and biofeedback that reads your body while you practice.",
         facts: [
           { label: "Role", value: "Lead developer" },
-          { label: "Period", value: "Feb 2026 – now" },
+          { label: "Period", value: "Feb 2026 – Nov 2026" },
           { label: "Platforms", value: "iOS, Android, Web" },
         ],
         phones: [shots.baojai.home, shots.baojai.breathingLive],
@@ -152,12 +151,12 @@ export const caseStudies: CaseStudy[] = [
       },
       outcome: {
         items: [
-          { title: "Live on both stores", body: "App Store, Google Play, and baojai.com." },
+          { title: "Shipped to both stores", body: "App Store, Google Play and baojai.com, 2026. Now offline." },
           { title: "Platinum + Gold Medal", body: "BME IIF 2026, Fukuoka, Japan." },
           { title: "Ran the booth", body: "Thailand Wellness & Healthcare Expo 2026, BITEC." },
         ],
         notes:
-          "It shipped: live on the App Store and Google Play, with the booking site at baojai.com. At BME IIF 2026 in Fukuoka the team of six from SCAI and KMITL won the Platinum Award, the highest distinction, and a Gold Medal with Jury Congratulations. We also ran the Baojai booth at Thailand Wellness and Healthcare Expo 2026 at BITEC Bangkok.",
+          "It shipped: released on the App Store and Google Play, with the booking site at baojai.com. The company has since shut the service down, so the screens here are the record of it. At BME IIF 2026 in Fukuoka the team of six from SCAI and KMITL won the Platinum Award, the highest distinction, and a Gold Medal with Jury Congratulations. We also ran the Baojai booth at Thailand Wellness and Healthcare Expo 2026 at BITEC Bangkok.",
       },
       end: { notes: "Thank you. Happy to go deeper on any part: the video pipeline, the BLE layer, or the backend." },
     },

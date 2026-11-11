@@ -32,12 +32,6 @@ export const portrait: Shot = {
   height: 1350,
 };
 
-export const baojaiLinks = [
-  { label: "App Store", href: "https://apps.apple.com/th/app/baojai/id6759597745" },
-  { label: "Google Play", href: "https://play.google.com/store/apps/details?id=com.scai.baojai" },
-  { label: "baojai.com", href: "https://baojai.com/" },
-];
-
 export const shots = {
   baojai: {
     home: v3("/images/work/baojai/home.jpg", "Home screen with today's pick, a slow breathing session suggested from HRV, and a 12-day practice streak"),
@@ -83,12 +77,11 @@ export type Work = {
 export const work: Work[] = [
   {
     title: "Baojai",
-    when: "Feb 2026 – now",
+    when: "Feb 2026 – Nov 2026",
     wide: true,
     summary:
       "Wellness and biofeedback on iOS and Android. Reads smart rings and EEG headbands over BLE and measures vital signs with the camera. Lead developer. Shown: UI v3 design.",
     visual: { kind: "phones", shots: [shots.baojai.home, shots.baojai.sleep, shots.baojai.health, shots.baojai.trends] },
-    links: baojaiLinks,
     caseStudy: "baojai",
   },
   {
